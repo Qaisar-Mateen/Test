@@ -25,7 +25,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
-          distribution: 'adoptopenjdk'  # Specify the JDK distribution
+          distribution: 'temurin'  # Use Eclipse Temurin
 
       # Step 3: Compile the Java code
       - name: Compile Java Project
