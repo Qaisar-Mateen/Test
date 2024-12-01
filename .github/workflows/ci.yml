@@ -32,4 +32,4 @@ jobs:
 
       # Step 4: Run JUnit tests
       - name: Run Tests
-        run: java -cp "out:lib/*" org.junit.runner.JUnitCore <YourTestClassName>
+        run: java -cp "out:lib/*" org.junit.runner.JUnitCore LoginTest
