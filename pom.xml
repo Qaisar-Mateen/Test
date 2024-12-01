@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <!-- The project's coordinates -->
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.yourcompany</groupId> <!-- Adjust groupId if needed -->
+    <artifactId>your-project</artifactId> <!-- Project name -->
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!-- Project information -->
+    <name>Test</name>
+    <description>A simple Java project</description>
+    <url>http://your-project-url</url>
+
+    <!-- Build Configuration -->
+    <build>
+        <sourceDirectory>src</sourceDirectory> <!-- Main source directory -->
+        <plugins>
+            <!-- Compiler Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source> <!-- Java source version -->
+                    <target>1.8</target> <!-- Java target version -->
+                </configuration>
+            </plugin>
+
+            <!-- Surefire Plugin to run tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- Dependencies -->
+    <dependencies>
+        <!-- JUnit Dependency for unit tests -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>
