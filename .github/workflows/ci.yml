@@ -25,6 +25,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '11'
+          distribution: 'adoptopenjdk'  # Specify the JDK distribution
 
       # Step 3: Compile the Java code
       - name: Compile Java Project
