@@ -32,15 +32,16 @@
 
             <!-- Surefire Plugin to run tests -->
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
-                <configuration>
-                    <useModulePath>false</useModulePath> <!-- For Java 9 and above, if you're using Java 9+ -->
-                    <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile> <!-- Optional if you have testng.xml -->
-                    </suiteXmlFiles>
-                </configuration>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+               <version>2.22.0</version>
+               <dependencies>
+                   <dependency>
+                       <groupId>org.junit.platform</groupId>
+                       <artifactId>junit-platform-surefire-provider</artifactId>
+                       <version>1.2.0</version>
+                   </dependency>
+               </dependencies>
             </plugin>
         </plugins>
     </build>
@@ -48,18 +49,24 @@
     <!-- Dependencies -->
     <dependencies>
         <!-- JUnit 5 dependency -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version> <!-- Use the latest stable version -->
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version> <!-- Use the latest stable version -->
-            <scope>test</scope>
-        </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>5.8.2</version> <!-- Use the latest stable version -->
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>5.8.2</version> <!-- Use the latest stable version -->
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>org.junit.platform</groupId>
+	<artifactId>junit-platform-runner</artifactId>
+	<version>1.2.0</version>
+	<scope>test</scope>
+    </dependency>
     </dependencies>
 
 </project>
