@@ -58,7 +58,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Install dependencies and build
+      - name: Install dependencies and run
         run: |
           mvn clean install
           
