@@ -68,7 +68,7 @@ jobs:
           
       - name: Run tests
         run: |
-          mvn test
+          mvn test -Djava.awt.headless=true
 
       - name: Upload test results
         if: failure()
