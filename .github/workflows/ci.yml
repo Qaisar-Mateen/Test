@@ -58,14 +58,14 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Install dependencies and run
-        run: |
-          mvn clean install
-          
       - name: Populate Database
         run: |
           mysql -h 127.0.0.1 -P 3306 -u root -p'`12abc=-0' testing < src/A2.sql
-          
+         
+      - name: Install dependencies and run
+        run: |
+          mvn clean install
+           
       - name: Run tests
         run: |
           mvn test -Djava.awt.headless=true
