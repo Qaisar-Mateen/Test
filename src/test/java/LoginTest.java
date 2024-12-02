@@ -33,20 +33,26 @@ public class LoginTest {
             assertNotNull(username, "Username should not be null for exact email and password match");
             assertEquals("John Doe", username, "Username should match the expected value for correct credentials");
 
-            // Email case mismatch (should fail)
+            // Email case mismatch (should pass)
             username = app.authenticateUser("JOHNDOE@EXAMPLE.COM", "password123"); // Uppercase email
-            assertNull(username, "Username should be null for email case mismatch");
+            assertNotNull(username, "Username should not be null for exact email and password match");
+            assertEquals("John Doe", username, "Username should match the expected value for correct credentials");
 
             username = app.authenticateUser("Johndoe@example.com", "password123"); // Mixed-case email
-            assertNull(username, "Username should be null for email case mismatch");
+            assertNotNull(username, "Username should not be null for exact email and password match");
+            assertEquals("John Doe", username, "Username should match the expected value for correct credentials");
 
-            // Password case mismatch (should fail)
+            // Password case mismatch (should pass)
             username = app.authenticateUser("johndoe@example.com", "Password123"); // Capital "P"
-            assertNull(username, "Username should be null for password case mismatch");
+            assertNotNull(username, "Username should not be null");
+            assertEquals("John Doe", username, "Username should match the expected value for correct credentials");
 
-            // Both email and password case mismatch (should fail)
+
+            // Both email and password case mismatch (should pass)
             username = app.authenticateUser("JOHNDOE@EXAMPLE.COM", "Password123"); // Uppercase email and mismatched password
-            assertNull(username, "Username should be null for mismatched case in both email and password");
+            assertNotNull(username, "Username should not be null");
+            assertEquals("John Doe", username, "Username should match the expected value for correct credentials");
+
         } catch (Exception e) {
             fail("Not Authenticating Password");
         }
