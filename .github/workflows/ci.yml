@@ -33,9 +33,6 @@ jobs:
       - name: Install dependencies and build
         run: |
           mvn clean install
-          
-      - name: Debug Maven classpath
-        run: mvn dependency:build-classpath -Dmdep.outputFile=classpath.txt && cat classpath.txt
 
       - name: Run tests
         run: mvn test
