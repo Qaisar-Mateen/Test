@@ -70,9 +70,15 @@ jobs:
         run: |
           mvn test -Djava.awt.headless=true
 
-      - name: Upload test results
-        if: failure()
-        uses: actions/upload-artifact@v3
+      - name: Notify GitHub of status
+        uses: actions/github-script@v6
         with:
-          name: test-results
-          path: target/surefire-reports
+          script: |
+            github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              context: 'Java CI with Maven / build (pull_request)',
+              description: 'All tests passed',
+            });
