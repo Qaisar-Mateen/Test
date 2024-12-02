@@ -1,4 +1,4 @@
-USE Testing;
+USE testing;
 
 -- Create User table
 CREATE TABLE User (
