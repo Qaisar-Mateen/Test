@@ -64,7 +64,7 @@ jobs:
           
       - name: Populate Database
         run: |
-          mysql -h 127.0.0.1 -P 3306 -u root -proot testing < src/A2.sql
+          mysql -h 127.0.0.1 -P 3306 -u root -p'`12abc=-0' testing < src/A2.sql
           
       - name: Run tests
         run: mvn test
