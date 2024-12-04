@@ -22,7 +22,7 @@ public class LoginApp {
             String query = "SELECT name FROM User WHERE Email = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, email);
-            
+            //erroe
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 userName = rs.getString("Name");
